@@ -25,7 +25,7 @@
       method="POST"
       class="pure-form pure-form-stacked"
       data-email="from_email@example.com"
-      action="https://script.google.com/macros/s/AKfycbwiGqJfsbs286uGMmdwpFqw9LGzsYZ75dicdUWgZKdXE5I1vmE/execc"
+      action="https://script.google.com/macros/s/AKfycbwiGqJfsbs286uGMmdwpFqw9LGzsYZ75dicdUWgZKdXE5I1vmE/exec"
     >
       <v-icon class="icon" name="paper-plane" scale="3" />
       <b-form-input id="name" name="name" placeholder="Name"></b-form-input>
