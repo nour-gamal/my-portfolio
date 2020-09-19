@@ -1,0 +1,95 @@
+<template>
+  <div class="contact text-center">
+    <h2>Contact Me</h2>
+    <b-container>
+      <b-row>
+        <b-col cols="12" md="4" col="12">
+          <v-icon class="icon" name="phone" scale="3" />
+          <h4>Call or What'sapp me on</h4>
+          <h5>01115044011</h5>
+        </b-col>
+        <b-col cols="12" md="4" col="12">
+          <v-icon class="icon" name="map-marker-alt" scale="3" />
+          <h4>Location</h4>
+          <h5>6th of october city,Giza,Egypt</h5>
+        </b-col>
+        <b-col cols="12" md="4" col="12">
+          <v-icon class="icon" name="at" scale="3" />
+          <h4>Email</h4>
+          <h5>nmg181963@hotmail.com</h5>
+        </b-col>
+      </b-row>
+    </b-container>
+    <form>
+      <v-icon class="icon" name="paper-plane" scale="3" />
+      <b-form-input required type="text" placeholder="Name"></b-form-input>
+      <b-form-input required type="email" placeholder="email"></b-form-input>
+      <b-form-textarea
+        required
+        placeholder="Leave your message"
+      ></b-form-textarea>
+      <button class="btn">Send</button>
+    </form>
+  </div>
+</template>
+<style lang="scss" scoped>
+.contact {
+  background: rgba($color: #000000, $alpha: 0.7);
+  min-height: calc(100vh - 86px - 15px);
+  margin: 15px;
+  margin-bottom: 0;
+  border-radius: 20px;
+  color: #c3c3c3;
+  padding: 10px;
+  h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    color: #ffac41;
+  }
+  h4 {
+    color: #ffac41;
+    font-weight: bolder;
+  }
+  form {
+    border: 1px solid #ffac41;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 50px auto;
+    width: 90%;
+    input,
+    textarea {
+      display: block;
+      background: transparent;
+      border: 1px solid #ffac41;
+      border-radius: 20px;
+      padding: 10px 80px;
+      color: #c3c3c3;
+      margin: 10px auto;
+      width: 80%;
+      &::placeholder {
+        text-align: center;
+      }
+    }
+  }
+
+  .btn {
+    background-color: transparent;
+    color: #ffac41;
+    border: 1px solid #c3c3c3;
+    border-radius: 20px;
+    padding: 2px 60px;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    &:hover {
+      color: #c3c3c3;
+      border: 1px solid #ffac41;
+      transform: scale(1.1, 1.1);
+    }
+  }
+  .icon {
+    margin: 40px;
+  }
+}
+</style>
