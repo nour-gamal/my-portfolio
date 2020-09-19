@@ -20,15 +20,31 @@
         </b-col>
       </b-row>
     </b-container>
-    <form>
+    <form
+      id="gform"
+      method="POST"
+      class="pure-form pure-form-stacked"
+      data-email="from_email@example.com"
+      action="https://script.google.com/macros/s/AKfycbwiGqJfsbs286uGMmdwpFqw9LGzsYZ75dicdUWgZKdXE5I1vmE/execc"
+    >
       <v-icon class="icon" name="paper-plane" scale="3" />
-      <b-form-input required type="text" placeholder="Name"></b-form-input>
-      <b-form-input required type="email" placeholder="email"></b-form-input>
-      <b-form-textarea
+      <b-form-input id="name" name="name" placeholder="Name"></b-form-input>
+      <b-form-input
+        id="email"
+        name="email"
+        type="email"
+        value=""
         required
+        placeholder="email"
+      ></b-form-input>
+      <b-form-textarea
+        id="message"
+        name="message"
         placeholder="Leave your message"
       ></b-form-textarea>
-      <button class="btn">Send</button>
+      <button id="btn" class="btn button-success pure-button button-xlarge">
+        Send
+      </button>
     </form>
   </div>
 </template>
@@ -50,7 +66,8 @@
     color: #ffac41;
     font-weight: bolder;
   }
-  form {
+  form,
+  section {
     border: 1px solid #ffac41;
     padding: 10px;
     border-radius: 20px;
