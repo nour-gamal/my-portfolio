@@ -2,7 +2,7 @@
   <div class="home">
     <div class="text-center">
       <img
-        src="@/assets/nour.jpeg"
+        src="@/assets/Me.jpg"
         width="220"
         height="220"
         class="rounded-circle "
