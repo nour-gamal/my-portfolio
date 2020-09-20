@@ -36,7 +36,9 @@
 </template>
 <style lang="scss" scoped>
 .home {
-  padding-top: 15vh;
+  padding-top: 14vh;
+  padding-bottom: 14vh;
+
   .ml1 {
     font-weight: 700;
     font-family: "Pacifico", cursive;

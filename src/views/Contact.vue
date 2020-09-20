@@ -11,7 +11,7 @@
         <b-col cols="12" md="4" col="12">
           <v-icon class="icon" name="map-marker-alt" scale="3" />
           <h4>Location</h4>
-          <h5>6th of october city,Giza,Egypt</h5>
+          <h5>6th of october,Giza,Egypt</h5>
         </b-col>
         <b-col cols="12" md="4" col="12">
           <v-icon class="icon" name="at" scale="3" />

@@ -22,7 +22,7 @@
           </section>
           <section>
             <h5 class="mainSecHeading">EDUCATION</h5>
-            <h6 class="branchSecHeading">
+            <h6 id="hti" class="branchSecHeading">
               Higher Technological Institute (HTI)
             </h6>
             <div class="ml-4">
@@ -80,9 +80,7 @@
                   <div class="subtext">
                     Military status: <span>Completed.</span>
                   </div>
-                  <div class="subtext">
-                    Social status: <span>Completed.</span>
-                  </div>
+                  <div class="subtext">Social status: <span>Single.</span></div>
                   <div class="subtext">
                     Hiring status: <span>Available.</span>
                   </div>
@@ -163,6 +161,7 @@
       transform: translate(0, 2px);
     }
   }
+
   p {
     padding: 10px;
     font-weight: 600;

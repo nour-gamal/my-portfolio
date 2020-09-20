@@ -5,12 +5,12 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="text-center ml-4">
-          <router-link to="/" class="pl-2">Home</router-link>
-          <router-link to="/about" class="pl-2">About</router-link>
-          <router-link to="/services" class="pl-2">Services</router-link>
-          <router-link to="/portfolio" class="pl-2">Portfolio</router-link>
-          <router-link to="/contact" class="pl-2">Contact</router-link>
+        <b-navbar-nav class="text-center ml-auto">
+          <router-link to="/" class="pl-4">Home</router-link>
+          <router-link to="/about" class="pl-4">About</router-link>
+          <router-link to="/services" class="pl-4">Services</router-link>
+          <router-link to="/portfolio" class="pl-4">Portfolio</router-link>
+          <router-link to="/contact" class="pl-4">Contact</router-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
