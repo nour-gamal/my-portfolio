@@ -294,7 +294,7 @@ export default {
           cat: "Website",
           date: "20/5/2020",
           url: "https://nour-inc.netlify.com/",
-          techUsed: ["html", "css", "Jquery", "bootstrap 3"],
+          techUsed: ["HTML5", "CSS3", "Javascript", "Jquery", "Bootstrap 3"],
           status: false,
         },
         {
@@ -303,7 +303,7 @@ export default {
           cat: "Website",
           date: "27/7/2020",
           url: "https://elittecorp.netlify.app/",
-          techUsed: ["html", "css", "Jquery", "bootstrap 4"],
+          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 4"],
           status: false,
         },
       ],
