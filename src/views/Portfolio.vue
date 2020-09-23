@@ -2,51 +2,133 @@
   <div class="portfolio text-center">
     <h2>Portfolio</h2>
     <b-container fluid class="mt-4">
-      <b-row>
-        <b-col cols="12" lg="4" sm="12" class="mb-2">
+      <div v-if="plusPage" class="plusPage">
+        <v-icon
+          @click="
+            (plusPage = !plusPage),
+              (infos[0].status = false),
+              (infos[1].status = false),
+              (infos[2].status = false),
+              (infos[3].status = false)
+          "
+          class="icon"
+          name="times-circle"
+          scale="2"
+        />
+        <div class="innerContent">
+          <div v-for="info in infos" :key="info.id">
+            <div v-if="info.status">
+              <h2>{{ info.name }}</h2>
+
+              <div class="framebox">
+                <h3>Project informations:</h3>
+                <div>
+                  Category :<span>{{ info.cat }}</span>
+                </div>
+                <div>
+                  Project date :<span>{{ info.date }} </span>
+                </div>
+
+                <div>
+                  Project URL :<a :href="info.url" target="_blank">
+                    {{ info.url }}</a
+                  >
+                </div>
+              </div>
+              <div class="framebox">
+                <h3>Technolgies used:</h3>
+                <div v-for="tech in info.techUsed" :key="tech">{{ tech }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <b-row class="mainPage">
+        <b-col cols="12" lg="4" sm="12" class=" mb-2" id="container">
           <b-img
+            thumbnail
             fluid
             src="../assets/portfolio/Axit.png"
             alt="Image 2"
             class="image"
-          ></b-img>
-          <a href="https://axitt.netlify.app/" target="_blank">
-            <button class="btn btn-success">Live preview</button>
-          </a>
+          >
+          </b-img>
+          <div id="overlay">
+            <h2 class="imgHead">Axit</h2>
+            <a href="https://axitt.netlify.app/" target="_blank">
+              <v-icon class="icon" name="eye" scale="2" />
+            </a>
+            <v-icon
+              @click="(plusPage = !plusPage), (infos[0].status = true)"
+              class="icon plus "
+              name="plus"
+              scale="2"
+            />
+          </div>
         </b-col>
-        <b-col cols="12" lg="4" sm="12">
+        <b-col cols="12" lg="4" sm="12" id="container">
           <b-img
+            thumbnail
             fluid
             src="../assets/portfolio/laundryApp.png"
             alt="Image 1"
             class="image"
           >
           </b-img>
-          <a href="https://laundryapp.netlify.app/" target="_blank">
-            <button class="btn btn-success">Live preview</button>
-          </a>
+          <div id="overlay">
+            <h2 class="imgHead">Laundry App</h2>
+            <a href="https://laundryapp.netlify.app/" target="_blank">
+              <v-icon class="icon" name="eye" scale="2" />
+            </a>
+            <v-icon
+              @click="(plusPage = !plusPage), (infos[1].status = true)"
+              class="icon plus"
+              name="plus"
+              scale="2"
+            />
+          </div>
         </b-col>
-        <b-col cols="12" lg="4" sm="12" class="mb-2">
+        <b-col cols="12" lg="4" sm="12" class="mb-2" id="container">
           <b-img
+            thumbnail
             fluid
             src="../assets/portfolio/nour-inc.png"
             alt="Image 3"
             class="image"
           ></b-img>
-          <a href="https://nour-inc.netlify.com/" target="_blank">
-            <button class="btn ">Live preview</button>
-          </a>
+          <div id="overlay">
+            <h2 class="imgHead">Nour-Inc</h2>
+            <a href="https://nour-inc.netlify.com/" target="_blank">
+              <v-icon class="icon" name="eye" scale="2" />
+            </a>
+            <v-icon
+              @click="(plusPage = !plusPage), (infos[2].status = true)"
+              class="icon plus"
+              name="plus"
+              scale="2"
+            />
+          </div>
         </b-col>
-        <b-col cols="12" lg="4" sm="12" class="mb-2">
+        <b-col cols="12" lg="4" sm="12" class="mb-2" id="container">
           <b-img
+            thumbnail
             fluid
             src="../assets/portfolio/elit-corp.png"
             alt="Image 1"
             class="image"
           ></b-img>
-          <a href="https://elittecorp.netlify.app/" target="_blank">
-            <button class="btn ">Live preview</button>
-          </a>
+          <div id="overlay">
+            <h2 class="imgHead">Elit-Corp</h2>
+            <a href="https://elittecorp.netlify.app/" target="_blank">
+              <v-icon class="icon" name="eye" scale="2" />
+            </a>
+            <v-icon
+              @click="(plusPage = !plusPage), (infos[3].status = true)"
+              class="icon plus"
+              name="plus"
+              scale="2"
+            />
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -68,33 +150,164 @@
   a {
     text-decoration: none;
   }
-  .btn {
-    background-color: transparent;
-    color: #c3c3c3;
-    border: 1px solid #ffac41;
-    border-radius: 20px;
-    font-weight: 600;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
 
-    &:hover {
-      color: #ffac41;
-      border: 1px solid #c3c3c3;
-      transform: scale(1.1, 1.1);
-    }
-  }
   .image {
     cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    opacity: 1;
+    backface-visibility: hidden;
+    margin-bottom: 20px;
   }
-  .btn {
-    display: flex;
-    margin: 10px auto;
+  #overlay {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  #container:hover .image {
+    opacity: 0.3;
+  }
+
+  #container:hover #overlay {
+    opacity: 1;
+  }
+  .imgHead {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #ffac41;
+  }
+  .icon {
+    color: #c3c3c3;
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.2, 1.2);
+      color: #ffac41;
+    }
+  }
+  .plusPage {
+    backdrop-filter: blur(20px);
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+
+    .icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      &:hover {
+        color: red;
+        transform: scale(1, 1);
+      }
+    }
+    .innerContent {
+      color: #fff;
+      width: 80%;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 60px;
+      padding: 20px;
+      .framebox {
+        border: 1px solid #ffac41;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+
+        h3 {
+          color: #c3c3c3;
+        }
+        div {
+          font-weight: bold;
+          color: #ffac41;
+          span,
+          a {
+            font-weight: lighter;
+            color: #c3c3c3;
+          }
+        }
+      }
+    }
   }
 }
 </style>
+<script>
+export default {
+  name: "portfolio",
+  data: function() {
+    return {
+      plusPage: false,
+      infos: [
+        {
+          id: 0,
+          name: "Axit",
+          cat: "Website",
+          date: "22/3/2020",
+          url: "https://axitt.netlify.app/",
+          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 3", "Jquery"],
+          status: false,
+        },
+        {
+          id: 1,
+          name: "Laundry App",
+          cat: "Web App",
+          date: "9/4/2020",
+          url: "https://laundryapp.netlify.app/",
+          techUsed: [
+            "HTML5",
+            "CSS3",
+            "Javascript",
+            "Jquery",
+            "Bootstrap 4",
+            "FireBase",
+          ],
+          status: false,
+        },
+        {
+          id: 2,
+          name: "Nour-Inc",
+          cat: "Website",
+          date: "20/5/2020",
+          url: "https://nour-inc.netlify.com/",
+          techUsed: ["html", "css", "Jquery", "bootstrap 3"],
+          status: false,
+        },
+        {
+          id: 3,
+          name: "Elit-Corp",
+          cat: "Website",
+          date: "27/7/2020",
+          url: "https://elittecorp.netlify.app/",
+          techUsed: ["html", "css", "Jquery", "bootstrap 4"],
+          status: false,
+        },
+      ],
+    };
+  },
+};
+</script>
