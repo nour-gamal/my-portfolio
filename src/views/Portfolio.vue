@@ -269,7 +269,7 @@ export default {
           cat: "Website",
           date: "22/3/2020",
           url: "https://axitt.netlify.app/",
-          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 3", "Jquery"],
+          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 3", "jQuery"],
           status: false,
         },
         {
@@ -281,8 +281,9 @@ export default {
           techUsed: [
             "HTML5",
             "CSS3",
+            "SCSS",
             "Javascript",
-            "Jquery",
+            "jQuery",
             "Bootstrap 4",
             "FireBase",
           ],
@@ -294,7 +295,7 @@ export default {
           cat: "Website",
           date: "20/5/2020",
           url: "https://nour-inc.netlify.com/",
-          techUsed: ["HTML5", "CSS3", "Javascript", "Jquery", "Bootstrap 3"],
+          techUsed: ["HTML5", "CSS3", "Javascript", "jQuery", "Bootstrap 3"],
           status: false,
         },
         {
@@ -303,7 +304,7 @@ export default {
           cat: "Website",
           date: "27/7/2020",
           url: "https://elittecorp.netlify.app/",
-          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 4"],
+          techUsed: ["HTML5", "CSS3", "Javascript", "jQuery", "Bootstrap 4"],
           status: false,
         },
       ],
