@@ -3,23 +3,28 @@
     <h2>Portfolio</h2>
     <b-container fluid class="mt-4">
       <div v-if="plusPage" class="plusPage">
-        <v-icon
-          @click="
-            (plusPage = !plusPage),
-              (infos[0].status = false),
-              (infos[1].status = false),
-              (infos[2].status = false),
-              (infos[3].status = false)
-          "
-          class="icon"
-          name="times-circle"
-          scale="2"
-        />
         <div class="innerContent">
           <div v-for="info in infos" :key="info.id">
+            <v-icon
+              @click="
+                (plusPage = !plusPage),
+                  (infos[0].status = false),
+                  (infos[1].status = false),
+                  (infos[2].status = false),
+                  (infos[3].status = false)
+              "
+              class="icon"
+              name="times-circle"
+              scale="2"
+            />
             <div v-if="info.status">
               <h2>{{ info.name }}</h2>
-
+              <b-img
+                width="150"
+                height="150"
+                rounded="circle"
+                :src="info.icon"
+              ></b-img>
               <div class="framebox">
                 <h3>Project informations:</h3>
                 <div>
@@ -44,87 +49,26 @@
         </div>
       </div>
       <b-row class="mainPage">
-        <b-col cols="12" lg="4" sm="12" class=" mb-2" id="container">
-          <b-img
-            thumbnail
-            fluid
-            src="../assets/portfolio/Axit.png"
-            alt="Image 2"
-            class="image"
-          >
+        <b-col
+          v-scrollAnimation
+          v-for="info in infos"
+          :key="info.id"
+          cols="12"
+          lg="4"
+          sm="12"
+          class="mb-2"
+          id="container"
+        >
+          <b-img thumbnail fluid :src="info.pic" alt="Image" class="image">
           </b-img>
           <div id="overlay">
-            <h2 class="imgHead">Axit</h2>
-            <a href="https://axitt.netlify.app/" target="_blank">
+            <h2 class="imgHead">{{ info.name }}</h2>
+            <a :href="info.url" target="_blank">
               <v-icon class="icon" name="eye" scale="2" />
             </a>
             <v-icon
-              @click="(plusPage = !plusPage), (infos[0].status = true)"
+              @click="(plusPage = !plusPage), (info.status = true)"
               class="icon plus "
-              name="plus"
-              scale="2"
-            />
-          </div>
-        </b-col>
-        <b-col cols="12" lg="4" sm="12" id="container">
-          <b-img
-            thumbnail
-            fluid
-            src="../assets/portfolio/laundryApp.png"
-            alt="Image 1"
-            class="image"
-          >
-          </b-img>
-          <div id="overlay">
-            <h2 class="imgHead">Laundry App</h2>
-            <a href="https://laundryapp.netlify.app/" target="_blank">
-              <v-icon class="icon" name="eye" scale="2" />
-            </a>
-            <v-icon
-              @click="(plusPage = !plusPage), (infos[1].status = true)"
-              class="icon plus"
-              name="plus"
-              scale="2"
-            />
-          </div>
-        </b-col>
-        <b-col cols="12" lg="4" sm="12" class="mb-2" id="container">
-          <b-img
-            thumbnail
-            fluid
-            src="../assets/portfolio/nour-inc.png"
-            alt="Image 3"
-            class="image"
-          ></b-img>
-          <div id="overlay">
-            <h2 class="imgHead">Nour-Inc</h2>
-            <a href="https://nour-inc.netlify.com/" target="_blank">
-              <v-icon class="icon" name="eye" scale="2" />
-            </a>
-            <v-icon
-              @click="(plusPage = !plusPage), (infos[2].status = true)"
-              class="icon plus"
-              name="plus"
-              scale="2"
-            />
-          </div>
-        </b-col>
-        <b-col cols="12" lg="4" sm="12" class="mb-2" id="container">
-          <b-img
-            thumbnail
-            fluid
-            src="../assets/portfolio/elit-corp.png"
-            alt="Image 1"
-            class="image"
-          ></b-img>
-          <div id="overlay">
-            <h2 class="imgHead">Elit-Corp</h2>
-            <a href="https://elittecorp.netlify.app/" target="_blank">
-              <v-icon class="icon" name="eye" scale="2" />
-            </a>
-            <v-icon
-              @click="(plusPage = !plusPage), (infos[3].status = true)"
-              class="icon plus"
               name="plus"
               scale="2"
             />
@@ -202,7 +146,6 @@
   .plusPage {
     backdrop-filter: blur(20px);
     height: 100vh;
-    overflow: hidden;
     width: 100%;
     position: fixed;
     top: 0;
@@ -254,6 +197,15 @@
       }
     }
   }
+  .before-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 2s ease-in-out;
+  }
+  .enter {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 </style>
 <script>
@@ -266,7 +218,9 @@ export default {
         {
           id: 0,
           name: "Axit",
+          icon: require("../assets/portfolio/icons/axit.png"),
           cat: "Website",
+          pic: require("../assets/portfolio/Axit.png"),
           date: "22/3/2020",
           url: "https://axitt.netlify.app/",
           techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 3", "jQuery"],
@@ -274,8 +228,10 @@ export default {
         },
         {
           id: 1,
-          name: "Laundry App",
+          name: "Laundry",
+          icon: require("../assets/portfolio/icons/Laundry-app.png"),
           cat: "Web App",
+          pic: require("../assets/portfolio/laundryApp.png"),
           date: "9/4/2020",
           url: "https://laundryapp.netlify.app/",
           techUsed: [
@@ -292,7 +248,9 @@ export default {
         {
           id: 2,
           name: "Nour-Inc",
+          icon: require("../assets/portfolio/icons/nour-inc.jpg"),
           cat: "Website",
+          pic: require("../assets/portfolio/nour-inc.png"),
           date: "20/5/2020",
           url: "https://nour-inc.netlify.com/",
           techUsed: ["HTML5", "CSS3", "Javascript", "jQuery", "Bootstrap 3"],
@@ -301,7 +259,9 @@ export default {
         {
           id: 3,
           name: "Elit-Corp",
+          icon: require("../assets/portfolio/icons/elit-corp.png"),
           cat: "Website",
+          pic: require("../assets/portfolio/elit-corp.png"),
           date: "27/7/2020",
           url: "https://elittecorp.netlify.app/",
           techUsed: ["HTML5", "CSS3", "Javascript", "jQuery", "Bootstrap 4"],

@@ -3,69 +3,18 @@
     <h2>Services</h2>
     <b-container>
       <b-row>
-        <b-col cols="12" lg="4" sm="12">
-          <b-card align="center" justify="center">
-            <b-img width="64" height="64" src="../assets/laptop.png" />
-            <h3>Web Development</h3>
-            <div>
-              I can design a responsive website for you by using HTML, CSS,
-              BootStrap, JQuery, and JavaScript Programming Language.
-            </div>
-          </b-card>
-        </b-col>
-
-        <b-col cols="12" lg="4" sm="12">
-          <b-card align="center" justify="center">
-            <b-img width="64" height="64" src="../assets/responsive.png" />
-            <h3>Responsive Design</h3>
-            <div>
-              I can design a 100% responsive website for you with all devices,
-              Tablets, and Browsers.
-            </div>
-          </b-card>
-        </b-col>
-
-        <b-col cols="12" lg="4" sm="12">
-          <b-card align="center" justify="center">
-            <b-img width="64" height="64" src="../assets/creative.png" />
-            <h3>Creative Design</h3>
-            <div>
-              I can Edit your current website. Like changing the color or even
-              adding a new content to make it seem better.
-            </div>
-          </b-card>
-        </b-col>
-
-        <b-col cols="12" lg="4" sm="12">
-          <b-card align="center" justify="center">
-            <b-img width="64" height="64" src="../assets/ideas.png" />
-            <h3>Web Idea</h3>
-            <div>
-              I can turn your ideas to a real projects with high quality. Beside
-              that i can give you more ideas to make you website much better.
-            </div>
-          </b-card>
-        </b-col>
-
-        <b-col cols="12" lg="4" sm="12">
-          <b-card align="center" justify="center">
-            <b-img width="64" height="64" src="../assets/retouch.png" />
-            <h3>Retouch</h3>
-            <div>
-              If you have a website and you wanna create a new design for it.
-              So, let me tell you that I can do that easily and in perfect way.
-            </div>
-          </b-card>
-        </b-col>
-
-        <b-col cols="12" lg="4" sm="12">
-          <b-card align="center" justify="center">
-            <b-img width="64" height="64" src="../assets/support.png" />
-            <h3>Support</h3>
-            <div>
-              Support is available if you wanna make any changes for your
-              website.
-            </div>
+        <b-col
+          v-scrollAnimation
+          v-for="card in cards"
+          :key="card.id"
+          cols="12"
+          lg="4"
+          sm="12"
+        >
+          <b-card>
+            <b-img width="64" height="64" :src="card.pic" alt="img" />
+            <h3>{{ card.heading }}</h3>
+            <div>{{ card.paragraph }}</div>
           </b-card>
         </b-col>
       </b-row>
@@ -78,8 +27,53 @@ export default {
   name: "Service",
   components: {},
   data: () => ({
-    //
+    cards: [
+      {
+        id: 0,
+        heading: "Web Development",
+        paragraph:
+          "I can design a responsive website for you by using HTML, CSS,BootStrap, JQuery, and JavaScript Programming Language.",
+        pic: require("@/assets/services/laptop.png"),
+      },
+      {
+        id: 1,
+        heading: "Responsive Design",
+        paragraph:
+          " I can design a 100% responsive website for you with all devices,Tablets, and Browsers.",
+        pic: require("@/assets/services/responsive.png"),
+      },
+      {
+        id: 2,
+        heading: "Creative Design",
+        paragraph:
+          " I can Edit your current website. Like changing the color or even adding a new content to make it seem better.",
+        pic: require("@/assets/services/creative.png"),
+      },
+      {
+        id: 3,
+        heading: "Web Ideas",
+        paragraph:
+          "I can turn your ideas to a real projects with high quality. Beside that i can give you more ideas to make you website much better.",
+        pic: require("@/assets/services/ideas.png"),
+      },
+      {
+        id: 4,
+        heading: "Retouchs",
+        paragraph:
+          "If you have a website and you wanna create a new design for it.So, let me tell you that I can do that easily and in perfect way.",
+        pic: require("@/assets/services/retouch.png"),
+      },
+      {
+        id: 5,
+        heading: "Support",
+        paragraph:
+          "  Support is available if you wanna make any changes for your website.",
+        pic: require("@/assets/services/support.png"),
+      },
+    ],
   }),
+  computed: {},
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
@@ -111,6 +105,15 @@ export default {
     div {
       color: #c3c3c3;
     }
+  }
+  .before-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 2s ease-in-out;
+  }
+  .enter {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 </style>
