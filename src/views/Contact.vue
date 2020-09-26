@@ -3,24 +3,22 @@
     <h2>Contact Me</h2>
     <b-container>
       <b-row>
-        <b-col cols="12" md="4" col="12">
-          <v-icon class="icon" name="phone" scale="3" />
-          <h4>Call or What'sapp me on</h4>
-          <h5>01115044011</h5>
-        </b-col>
-        <b-col cols="12" md="4" col="12">
-          <v-icon class="icon" name="map-marker-alt" scale="3" />
-          <h4>Location</h4>
-          <h5>6th of october,Giza,Egypt</h5>
-        </b-col>
-        <b-col cols="12" md="4" col="12">
-          <v-icon class="icon" name="at" scale="3" />
-          <h4>Email</h4>
-          <h5>nmg181963@hotmail.com</h5>
+        <b-col
+          v-scrollAnimation
+          v-for="info in infos"
+          :key="info.icon"
+          cols="12"
+          md="4"
+          col="12"
+        >
+          <v-icon class="icon" :name="info.icon" scale="3" />
+          <h4>{{ info.h4 }}</h4>
+          <h5>{{ info.h5 }}</h5>
         </b-col>
       </b-row>
     </b-container>
     <form
+      v-scrollAnimation
       id="gform"
       method="POST"
       class="pure-form pure-form-stacked"
@@ -108,5 +106,40 @@
   .icon {
     margin: 40px;
   }
+  .before-enter {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.7s ease-in-out;
+  }
+  .enter {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 </style>
+<script>
+export default {
+  name: "contact",
+  data: function() {
+    return {
+      infos: [
+        {
+          icon: "phone",
+          h4: "Call or What'sapp me on",
+          h5: "01115044011",
+        },
+        {
+          icon: "map-marker-alt",
+          h4: "Location",
+          h5: "6th of october,Giza,Egypt",
+        },
+        {
+          icon: "at",
+          h4: "Email",
+          h5: "nmg181963@hotmail.com",
+        },
+      ],
+    };
+  },
+};
+</script>

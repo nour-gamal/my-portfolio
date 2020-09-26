@@ -5,7 +5,7 @@
       <h3 class="mainHeading">CHECK MY RESUME</h3>
       <b-row>
         <b-col cols="12" xl="6" md="12">
-          <section>
+          <section v-scrollAnimation>
             <h5 class="mainSecHeading">SUMMARY</h5>
             <h6 class="branchSecHeading">NOUR MOHAMED GAMAL</h6>
             <div class="ml-4">
@@ -20,7 +20,7 @@
               </p>
             </div>
           </section>
-          <section>
+          <section v-scrollAnimation>
             <h5 class="mainSecHeading">EDUCATION</h5>
             <h6 id="hti" class="branchSecHeading">
               Higher Technological Institute (HTI)
@@ -35,7 +35,7 @@
           </section>
         </b-col>
         <b-col cols="12" xl="6" col="12">
-          <section>
+          <section v-scrollAnimation>
             <h5 class="mainSecHeading">PROFESSIONAL EXPERIENCE</h5>
             <h6 class="branchSecHeading">Skills</h6>
             <div class="ml-4">
@@ -63,7 +63,7 @@
               </b-container>
             </div>
           </section>
-          <section>
+          <section v-scrollAnimation>
             <h5 class="mainSecHeading">Personal informatiom</h5>
             <b-container>
               <b-row>
@@ -247,6 +247,15 @@
         }
       }
     }
+  }
+  .before-enter {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.7s ease-in-out;
+  }
+  .enter {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 </style>

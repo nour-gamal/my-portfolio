@@ -2,7 +2,7 @@
   <div class="portfolio text-center">
     <h2>Portfolio</h2>
     <b-container fluid class="mt-4">
-      <div v-if="plusPage" class="plusPage">
+      <div v-scrollAnimation v-if="plusPage" class="plusPage">
         <div class="innerContent">
           <div v-for="info in infos" :key="info.id">
             <v-icon
@@ -197,15 +197,15 @@
       }
     }
   }
-  .before-enter {
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 2s ease-in-out;
-  }
-  .enter {
-    transform: translateX(0);
-    opacity: 1;
-  }
+}
+.before-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.7s ease-in-out;
+}
+.enter {
+  transform: translateX(0);
+  opacity: 1;
 }
 </style>
 <script>
