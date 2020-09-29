@@ -108,7 +108,7 @@ export default {
   }
   .before-enter {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateX(-100px);
     transition: all 0.7s ease-in-out;
   }
   .enter {
