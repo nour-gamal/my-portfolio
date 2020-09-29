@@ -72,7 +72,7 @@
                     Address: <span>6th of october.</span>
                   </div>
                   <div class="subtext">Phone: <span>01115044011.</span></div>
-                  <div class="subtext">Birthday: <span>22/1/1995.</span></div>
+                  <div class="subtext">Birthday: <span>22/01/1995.</span></div>
                   <div class="subtext">Age <span>25.</span></div>
                 </b-col>
                 <b-col cols="12" xl="6" col="12">
@@ -88,10 +88,11 @@
                 <div class="mx-auto">
                   <a
                     target="_blank"
-                    href="https://drive.google.com/file/d/1utwyYk0o21KxNq-HtpbAD38jAVrFpOYT/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1_5Y5OKyxISDSBXBfk6AKMMNjbHWDDkKE/view?usp=sharing"
                   >
                     <button class="btn  m-2 px-3">Download CV</button>
                   </a>
+
                   <a
                     target="_blank"
                     href="https://www.freelancer.com/u/nourmoee"

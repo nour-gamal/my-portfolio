@@ -131,7 +131,7 @@ export default {
         {
           icon: "map-marker-alt",
           h4: "Location",
-          h5: "6th of october,Giza,Egypt",
+          h5: "6th of October City,Giza,Egypt",
         },
         {
           icon: "at",
