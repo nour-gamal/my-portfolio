@@ -48,6 +48,7 @@
                     <label class="label-lg-70">SASS</label>
                     <label class="label-lg-90">Git</label>
                     <label class="label-lg-110">Ajax</label>
+                    <label class="label-lg-110">React.js</label>
                     <label class="label-lg-130">Vue.js</label>
                   </b-col>
                   <b-col class="opp-col" cols="12" lg="6" col="12">
@@ -57,6 +58,7 @@
                     <label class="label-md-70 label-lg-70">jQuery</label>
                     <label class="label-md-50 label-lg-90">GitHub</label>
                     <label class="label-md-30 label-lg-110">Json</label>
+                    <label class="label-md-30 label-lg-110">Photoshop</label>
                     <label class="label-md-10 label-lg-130">Vuetify</label>
                   </b-col>
                 </b-row>
