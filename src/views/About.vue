@@ -90,7 +90,7 @@
                 <div class="mx-auto">
                   <a
                     target="_blank"
-                    href="https://drive.google.com/file/d/1_5Y5OKyxISDSBXBfk6AKMMNjbHWDDkKE/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1GMPEeI-IK5VFbL84aIKKlxjGAGXk4KTx/view?usp=sharing"
                   >
                     <button class="btn  m-2 px-3">Download CV</button>
                   </a>
