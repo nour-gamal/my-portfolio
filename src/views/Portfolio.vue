@@ -215,15 +215,15 @@ export default {
     return {
       plusPage: false,
       infos: [
-        {
+         {
           id: 0,
-          name: "Axit",
-          icon: require("../assets/portfolio/icons/axit.png"),
-          cat: "Website",
-          pic: require("../assets/portfolio/Axit.png"),
-          date: "22/3/2020",
-          url: "https://axitt.netlify.app/",
-          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 3", "jQuery"],
+          name: "Projectobia",
+          icon: require("../assets/portfolio/icons/Projectobia.png"),
+          cat: "WebApp",
+          pic: require("../assets/portfolio/Projectobia.png"),
+          date: "27/10/2020",
+          url: "http://projectobia.netlify.app/",
+          techUsed: ["React js","Materialize.css","Moment.js"],
           status: false,
         },
         {
@@ -247,26 +247,39 @@ export default {
         },
         {
           id: 2,
+          name: "Axit",
+          icon: require("../assets/portfolio/icons/axit.png"),
+          cat: "Website",
+          pic: require("../assets/portfolio/Axit.png"),
+          date: "22/7/2020",
+          url: "https://axitt.netlify.app/",
+          techUsed: ["HTML5", "CSS3", "Javascript", "Bootstrap 3", "jQuery"],
+          status: false,
+        },
+        
+        {
+          id: 3,
           name: "Nour-Inc",
           icon: require("../assets/portfolio/icons/nour-inc.jpg"),
           cat: "Website",
           pic: require("../assets/portfolio/nour-inc.png"),
-          date: "20/5/2020",
+          date: "2/5/2020",
           url: "https://nour-inc.netlify.com/",
           techUsed: ["HTML5", "CSS3", "Javascript", "jQuery", "Bootstrap 3"],
           status: false,
         },
         {
-          id: 3,
+          id: 4,
           name: "Elit-Corp",
           icon: require("../assets/portfolio/icons/elit-corp.png"),
           cat: "Website",
           pic: require("../assets/portfolio/elit-corp.png"),
-          date: "27/7/2020",
+          date: "7/3/2020",
           url: "https://elittecorp.netlify.app/",
           techUsed: ["HTML5", "CSS3", "Javascript", "jQuery", "Bootstrap 4"],
           status: false,
         },
+       
       ],
     };
   },
