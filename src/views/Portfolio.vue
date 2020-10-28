@@ -223,7 +223,7 @@ export default {
           pic: require("../assets/portfolio/Projectobia.png"),
           date: "27/10/2020",
           url: "http://projectobia.netlify.app/",
-          techUsed: ["React js","Materialize.css","Moment.js","Firebase"],
+          techUsed: ["React js","Redux","Materialize.css","Moment.js","Firebase"],
           status: false,
         },
         {
